@@ -90,16 +90,16 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "coverage": "jest --coverage",
-    "benchmark": "yarn build-benchmark && NODE_ENV=production node --expose-gc benchmarks/dist/index.cjs",
-    "build-benchmark": "BENCHMARKS=true yarn build",
-    "build": "yarn clean-build && NODE_ENV=production rollup -c",
+    "benchmark": "npm run build-benchmark && NODE_ENV=production node --expose-gc benchmarks/dist/index.cjs",
+    "build-benchmark": "BENCHMARKS=true npm run build",
+    "build": "npm run clean-build && NODE_ENV=production rollup -c",
     "clean-build": "rm -rf dist",
-    "build-minified": "MINIFY=true yarn build",
-    "build-docs": "typedoc --options typedoc.json && yarn build-demo",
+    "build-minified": "MINIFY=true npm run build",
+    "build-docs": "typedoc --options typedoc.json && npm run build-demo",
     "build-demo": "mkdir -p ./docs/demo && cp -r ./examples/plain_js/. ./docs/demo",
     "lint": "eslint 'src/**/*.{js,ts}'",
     "lintfix": "eslint --fix 'src/**/*.{js,ts}'",
-    "prepublishOnly": "yarn test && yarn build"
+    "prepublishOnly": "npm run test && npm run build"
   },
   "sideEffects": false
 }
